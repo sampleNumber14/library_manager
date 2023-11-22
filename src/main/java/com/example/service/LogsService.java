@@ -24,8 +24,11 @@ public class LogsService {
 	}
 	
     public void createLog(Integer libraryId, Integer userId, LocalDateTime returnDueDate) {
+    	//インスタンス作成
         Logs log = new Logs();
+        // 本IDセット
         log.setLibraryId(libraryId);
+        // ユーザIDセット
         log.setUserId(userId);
         log.setRentDate(LocalDateTime.now());
         log.setReturnDueDate(returnDueDate);

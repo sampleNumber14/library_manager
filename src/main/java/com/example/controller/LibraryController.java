@@ -62,8 +62,14 @@ public class LibraryController {
 
 		libraryService.save(library);
 		
+		
+		
 		logService.createLog(library.getId(), loginUser.getUsers().getId(), LocalDateTime.parse(returnDueDate));
 		return "redirect:/library";
 	}
+	// http://localhost:8080/library/borrow?id=1
+	/* 	-- user1のパスワード → pass_user1
+		-- user2のパスワード → pass_user2
+	*/
 
 }

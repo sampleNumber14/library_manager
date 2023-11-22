@@ -17,7 +17,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception{
 		//どこまで入って良いかのライン
 		http.authorizeRequests().antMatchers("/loginForm").permitAll() //ログインフォームは万物OK
-		.antMatchers("/library/borrow/**").authenticated()
 		.anyRequest().authenticated(); //他のところはログインしてなきゃログインを求める
 		
 		//ログインの処理
